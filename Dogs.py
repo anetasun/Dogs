@@ -5,8 +5,6 @@ from PIL import Image, ImageTk
 from io import BytesIO
 
 
-
-
 def get_dog_image():
     try:
         response = reguests.get("https://dog.ceo/api/breeds/image/random")
@@ -14,7 +12,7 @@ def get_dog_image():
         data = response.json()
         return data['message']
     except Exception as e:
-        mb.showerror("Ошибка", f"Ошибка при запросе к API: {e}")
+        mb.showerror("Ошибка", f"Возникла ошибка при запросе к API: {e}")
         return None
 
 
